@@ -1,0 +1,117 @@
+/*
+font-family: 'Audiowide', cursive;
+font-family: 'Nunito', sans-serif;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Righteous', cursive;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+:root {
+    --navHeight: 66.84px;
+    --primaryColor: #20262E;
+    --secondaryColor: #E9E8E8;
+    --thirdColor: #181823;
+    --navbarColor: var(--primaryColor);
+}
+
+h1,
+h2 {
+    font-family: 'Audiowide', cursive;
+}
+
+h3,
+h4 {
+    font-family: 'Righteous', cursive;
+}
+
+p,
+h5 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav {
+    background-color: var(--navbarColor);
+}
+
+.nav-link {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.pageSection:not(.contact) {
+    padding-top: var(--navHeight);
+}
+
+.pageSection:first-child:not(.contact) {
+    height: 100vh;
+}
+
+.pageSection:nth-child(even) {
+    background-color: var(--secondaryColor);
+    color: var(--thirdColor);
+}
+
+.pageSection:nth-child(even) .sectionTitle {
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+}
+
+.pageSection:nth-child(odd) {
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+}
+
+.pageSection:nth-child(odd) .sectionTitle {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+}
+
+.maghPhoto {
+    border-radius: 13%;
+    width: 300px;
+}
+
+.sectionTitle {
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.overview p {
+    font-size: 20px;
+}
+
+.skills img {
+    width: 180px;
+}
+
+.overview img {
+    max-width: 450px;
+}
+
+.downloadCV {
+    padding-top: var(--navHeight);
+    padding: 34px;
+    background-color: var(--thirdColor) !important;
+}
+
+.card {
+    background-color: var(--secondaryColor) !important;
+    box-shadow: 3px 3px 3px 2px #696969;
+    border-top: none !important;
+}
+
+.fa-brands {
+    color: #fff;
+}
+
+.fb:hover {
+    color: #1877f2;
+}
+
+.github:hover {
+    color: #6e5494;
+}
+
+.linkedin:hover {
+    color: #00a0dc;
+}

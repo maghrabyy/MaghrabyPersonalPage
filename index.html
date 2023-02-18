@@ -4,56 +4,272 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maghraby's Personal Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/pm.ico">
+    <title>Maghraby</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- favIcon -->
+    <link rel="icon" href="Assets/favicon.ico">
+    <!-- Script -->
+    <script src="script/script.js" defer></script>
+    <!-- FontAwesome icons -->
+    <script src="https://kit.fontawesome.com/52f4839422.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Lobster+Two&family=Righteous&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito&family=Press+Start+2P&family=Righteous&family=Roboto+Condensed&family=Ubuntu&display=swap" rel="stylesheet"></head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">home</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Assets/images/maghLogo.png" width="80"  alt="Maghraby's Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about-section" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills-section" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio-section" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact-section" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <main>
-        <div class="topContainer">
-            <img class="topcloud" src="images/cloud.png" alt="cloud-img">
-            <h2 class="myName">I'm Maghraby</h2>
-            <p class="myJob">a software developer.</p>
-            <img class="botcloud" src="images/cloud.png" alt="cloud-img">
-            <img class="mountainImg" src="images/mountain.png" alt="mountain-img">
+        <!-- Landing Section -->
+        <div class="landing pageSection d-flex justify-content-center align-items-center" id="landing-section">       
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="info text-center">
+                            <h2 class="fw-bold">Mahmoud Elmaghraby</h2>
+                            <h4>I'm a software developer.</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-lg-start text-center">
+                        <img src="Assets/images/maghh.jpg" class="img-fluid maghPhoto" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="middleContainer">
-            <h2>Skills</h2>
-         
-            <img class="flutterskill" src="images/smartphone.png" alt="smartphone-img">
-            <img class="webdevskill" src="images/web-design.png" alt="website-img">
-            <h3 class="skill1">Flutter Developer</h3>
-            <h3 class="skill2">Web Developer</h3>
+        <!-- About Section -->
+        <div class="about pageSection pt-5 pb-5" id="about-section">
+            <div class="container">
+                <div class="sectionTitle text-center">
+                    <h3>About</h3>                        
+                </div>
+                <div class="pInfo row pt-4 pb-2 text-center">
+                    <div class="col-6 col-lg-4">
+                        <div class="infoBox">
+                            <i class="fa-solid fa-person-military-rifle fa-10x"></i>
+                            <h3>military Service</h3>
+                            <h5>Serving</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <div class="infoBox">
+                            <i class="fa-solid fa-calendar-days fa-10x"></i>
+                            <h3>Date of birth</h3>
+                            <h5>19 - 01 - 2000</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-lg-0 mt-4">
+                        <div class="infoBox">
+                            <i class="fa-solid fa-earth-americas fa-10x"></i>
+                            <h3>Nationality</h3>
+                            <h5>Egyptian</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview pt-4 pb-4">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-lg-5 order-2 order-lg-first">
+                            <p class="text-lg-end text-center">
+                                A recently graduated individual who’s highly motivated to secure a position in software development
+                                within a challenging environment where I can utilize my skills and talents towards development and 
+                                implementation of new ideas and contributing to the growth of the organization.
+                            </p>
+                        </div>
+                        <div class="col-lg-5 order-first order-lg-2">
+                            <img src="Assets/images/coding.png" class="img-fluid" width="100%" alt="a person coding">
+                        </div>
+                        <div class="col-lg-5 order-3">
+                            <img src="Assets/images/web-design.png" class="img-fluid" width="100%" alt="web design">
+                        </div>
+                        <div class="col-lg-5 order-4">
+                            <p class="text-lg-start text-center">
+                                A frontend web developer with a practical experience with HTML5, CSS3, Bootstrap, and Javascript.
+                                with number of web designs on github.
+                            </p>
+                        </div>
+                        <div class="col-lg-5 order-last order-lg-5">
+                            <p class="text-lg-end text-center">
+                                A cross-platform mobile developer using Flutter framework and Firebase with the capability 
+                                of developing high performing mobile applications working on both Android and iOS.
+                            </p>
+                        </div>
+                        <div class="col-lg-5 order-5 order-lg-last">
+                            <img src="Assets/images/smartphone.png" class="img-fluid" width="100%" alt="Smart phone">
+                        </div>
+                    </div> 
+                </div>
+                <!-- Donwload CV Section -->
+                <div class="downloadCV text-white rounded-4" id="cv-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 pt-2 text-lg-start text-center">
+                                <h5>Download the CV for more details.</h5>
+                            </div>
+                            <div class="col-lg-6 text-lg-end text-center">
+                                <button class="btn btn-success btnColor">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="botContainer">
-            <h2>Top Projects</h2>
-            <div class="projectRow">   
-                 <a href="https://maghrabyy.github.io/pocketmechanic/index.html" target="_blank">
-                <img class="pmLogo" src="images/pm.png" alt="pocket mechanic logo">  </a> 
-                <h2 class="pmProject">Pocket Mechanic</h2>
-                <p>Pocket Mechanic is a graduation project that its own purpose to reduce the gap between car owners and mechanics by providing quality vehicle maintenance services and spare-part shopping.</p>
+        <!-- Skills Section -->
+        <div class="skills pageSection pb-5" id="skills-section">
+            <div class="container">
+                <div class="sectionTitle text-center mb-4">
+                    <h3>Skills</h3>                        
+                </div>
+                <div class="row text-center">
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/html.png" class="img-fluid p-3" alt="">
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/css.png" class="img-fluid  p-3"alt="">
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/js.png"class="img-fluid  p-3" alt="">
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/bootstrap.png" class="img-fluid p-3" alt="">
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/physics.png" class="img-fluid p-3" alt="">
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/flutter.png"class="img-fluid p-3" alt="">
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/git.png"class="img-fluid p-3" alt="">
+                    </div>
+                    <div class="col-6 col-lg-4">
+                        <img src="Assets/images/skills/github.png"class="img-fluid p-3" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Section -->
+        <div class="portfolio pageSection pb-5" id="portfolio-section">
+            <div class="container">
+                <div class="sectionTitle text-center mb-4">
+                    <h3>Portfolio</h3>                        
+                </div>
+                <div class="row text-center">
+                    <div class="col-lg-4">
+                        <div class="card h-100">
+                            <img src="Assets/images/pocketMechanic.png" alt="pocket Mechanic" class="img-fluid card-img-top">
+                            <div class="card-header"><h4 class="fw-bold">Pocket Mechanic</h4></div>
+                            <div class="card-body">
+                                <div class="card-text"><p class="text-start"> A cross-platform mobile application where the user can choose 
+                                    between a variety of vehicle maintenance services.
+                                    such as: Requesting a mechanic to do a checkup and perform their service on spot, 
+                                    viewing the nearest available mechanic and book a reservation date with, or the 
+                                    nearest available tow-truck driver around the user's location. In addition to,
+                                     a section where the user can purchase spare-parts to their vehicle.</p></div>
+                            </div>
+                            <div class="card-footer"><button class="btn btn-success">View more.</button></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-lg-0 mt-3">
+                        <div class="card h-100">
+                            <img src="Assets/images/maghUniverse.png" alt="pocket Mechanic" class="img-fluid card-img-top">
+                            <div class="card-header"><h4 class="fw-bold">Maghh Universe</h4></div>
+                            <div class="card-body">
+                                <div class="card-text"><p class="text-start"> An object oriented web application where you can
+                                    choose to be hero, villian, or civil and you can add more characters of these types.
+                                The hero's role is to protect and heal the civil from the villian's attack and to attack the villain.
+                            while the villain can choose to attack the hero or the civil.</p></div>
+                            </div>
+                            <div class="card-footer"><button class="btn btn-success">View more.</button></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-lg-0 mt-3">
+                        <div class="card h-100">
+                            <img src="Assets/images/designThree.png" alt="pocket Mechanic" class="img-fluid card-img-top">
+                            <div class="card-header"><h4 class="fw-bold">Web Designs</h4></div>
+                            <div class="card-body">
+                                <div class="card-text"><p class="text-start"> A variety of web designs powered by Bootstrap.</p></div>
+                            </div>
+                            <div class="card-footer"><button class="btn btn-success">View more.</button></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+    <!-- Contact section -->
     <footer>
-        <a href="https://www.facebook.com/MahMaghraby/" target="_blank">Facebook</a>
-        <a href="https://twitter.com/Mahmoghraby" target="_blank">Twitter</a>
-        <a href="https://www.linkedin.com/in/maghrabyy/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/maghrabyy" target="_blank">Github</a>
-        <a href="https://www.reddit.com/user/chaoticmagh" target="_blank">Reddit</a>
-        <p>© 2022 Maghraby</p>
+        <div class="contact pageSection pt-4 pb-3" id="contact-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="copyright d-flex flex-column gap-3 justify-content-between h-100 ">
+                            <img src="Assets/images/maghLogo.png" width="80"  alt="Maghraby's Logo">
+                            <h5>&#169; 2023 - <span id="maghhName">maghraby</span></h5>
+                        </div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <h4>Links</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-decoration-none text-white">Home</a></li>
+                            <li><a href="#about-section" class="text-decoration-none text-white">About</a></li>
+                            <li><a href="#cv-section" class="text-decoration-none text-white">CV</a></li>
+                            <li><a href="#skills-section" class="text-decoration-none text-white">Skills</a></li>
+                            <li><a href="#portfolio-section" class="text-decoration-none text-white">Portfolio</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-4 d-flex flex-column align-items-end">
+                        <h4>Contact</h4>
+                        <ul class="d-flex gap-3 list-unstyled">
+                            <li>
+                                <a href="https://www.linkedin.com/in/maghrabyy/">
+                                    <i class="fa-brands fa-linkedin fa-2x linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/maghrabyy">
+                                    <i class="fa-brands fa-github fa-2x github"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/MahMaghraby">
+                                    <i class="fa-brands fa-facebook fa-2x fb"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
