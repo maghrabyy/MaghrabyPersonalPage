@@ -185,17 +185,29 @@
                 <div class="sectionTitle text-center mb-4">
                     <h3>Portfolio</h3>                        
                 </div>
-                <div class="portfolioCategories ">
-                    <ul class="list-unstyled d-flex justify-content-center gap-3">
-                        <li class="portfolioCategory">Flutter Apps</li>
-                        <li class="portfolioCategory">Web Apps</li>
-                        <li class="portfolioCategory">Web Designs</li>
+                <div class="portfolioCategories text-center">
+                    <div class="filterButton d-block d-lg-none" >
+                        <div class="customButton mb-3" id="filter-btn">Filter 
+                            <i class="fa-solid fa-filter"></i>
+                        </div>
+                        <ul class="hiddenCategories list-unstyled d-none flex-column flex-wrap ps-5 gap-2" id="hidden-categories-filter">
+                            <li class="portfolioCategory customButton active" id="all-category">All</li>
+                            <li class="portfolioCategory customButton" id="flutter-category-btn">Flutter Apps</li>
+                            <li class="portfolioCategory customButton" id="webapp-category-btn">Web Apps</li>
+                            <li class="portfolioCategory customButton" id="webdesigns-category-btn">Web Designs</li>
+                        </ul>
+                    </div>
+                    <ul class="list-unstyled d-none d-lg-flex justify-content-center gap-3 text-center">
+                        <li class="portfolioCategory customButton active" id="all-category-lg">All</li>
+                        <li class="portfolioCategory customButton" id="flutter-category-btn-lg">Flutter Apps</li>
+                        <li class="portfolioCategory customButton" id="webapp-category-btn-lg">Web Apps</li>
+                        <li class="portfolioCategory customButton" id="webdesigns-category-btn-lg">Web Designs</li>
                     </ul>
                 </div>
-                <div class="row text-center">
-                    <div class="col-lg-4">
+                <div class="row text-center" id="row-element">
+                    <!-- <div class="col-lg-4">
                         <div class="card h-100">
-                            <img src="Assets/images/pocketMechanic.png" alt="pocket Mechanic" class="img-fluid card-img-top">
+                            <img src="Assets/images/Projects/pocketMechanic.png" alt="pocket Mechanic" class="img-fluid card-img-top">
                             <div class="card-header"><h4 class="fw-bold">Pocket Mechanic</h4></div>
                             <div class="card-body">
                                 <div class="card-text"><p class="text-start"> A cross-platform mobile application where the user can choose 
@@ -205,16 +217,16 @@
                                     nearest available tow-truck driver around the user's location. In addition to,
                                      a section where the user can purchase spare-parts to their vehicle.</p></div>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer d-flex gap-3 justify-content-center">
                                 <a href="https://github.com/maghrabyy/PocketMechnicApp" target="_blank">
                                     <i class="fa-brands fa-github fa-2x github"></i>
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 mt-lg-0 mt-3">
+                    </div> -->
+                    <!-- <div class="col-lg-4 mt-lg-0 mt-3">
                         <div class="card h-100">
-                            <img src="Assets/images/maghUniverse.png" alt="Magh Universe webpage" class="img-fluid card-img-top">
+                            <img src="Assets/images/Projects/maghUniverse.png" alt="Magh Universe webpage" class="img-fluid card-img-top">
                             <div class="card-header"><h4 class="fw-bold">Maghh Universe</h4></div>
                             <div class="card-body">
                                 <div class="card-text"><p class="text-start"> An object oriented web application where you can
@@ -234,7 +246,7 @@
                     </div>
                     <div class="col-lg-4 mt-lg-0 mt-3">
                         <div class="card h-100">
-                            <img src="Assets/images/designThree.png" alt="Third web design" class="img-fluid card-img-top">
+                            <img src="Assets/images/Projects/designThree.png" alt="Third web design" class="img-fluid card-img-top">
                             <div class="card-header"><h4 class="fw-bold">Web Designs</h4></div>
                             <div class="card-body">
                                 <div class="card-text"><p class="text-start"> A variety of web designs powered by Bootstrap.</p></div>
@@ -248,7 +260,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

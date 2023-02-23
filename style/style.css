@@ -32,6 +32,22 @@ h6 {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.customButton {
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    user-select: none;
+    box-shadow: 3px 3px 3px #696969;
+    width: 120px;
+}
+
+.customButton:hover {
+    background-color: var(--thirdColor);
+    transform: scale(1.1);
+}
 
 .pageSection:not(.contact) {
     padding-top: var(--navHeight);
@@ -103,18 +119,8 @@ nav {
 }
 
 /* Portfolio */
-.portfolioCategory {
-    background-color: var(--primaryColor);
-    color: var(--secondaryColor);
-    padding: 10px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-family: 'Nunito', sans-serif;
-}
-
-.portfolioCategory:hover {
-    background-color: var(--thirdColor);
-    transform: scale(1.1);
+.hiddenCategories {
+    height: 100px;
 }
 
 .portfolioCategory.active {
@@ -127,12 +133,15 @@ nav {
     border-top: none !important;
 }
 
-.portfolio .fa-brands,
-.fa-solid:not(.contact .fa-solid, .downloadCV .fa-solid) {
+.portfolio .fa-brands {
     color: var(--thirdColor);
 }
 
-.portfolio .fa-solid:hover {
+.portfolio .fa-solid:not(.filterButton .fa-solid) {
+    color: var(--thirdColor);
+}
+
+.portfolio .fa-solid:not(.filterButton .fa-solid):hover {
     color: #2F58CD;
 }
 
