@@ -101,7 +101,7 @@ nav {
     border-top: none !important;
 }
 
-.fa-brands {
+.fa-brands:not(.portfolio .fa-brands) {
     color: #fff;
 }
 
