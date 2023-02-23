@@ -15,6 +15,7 @@ font-family: 'Ubuntu', sans-serif;
     --navbarColor: var(--primaryColor);
 }
 
+/* Main */
 h1,
 h2 {
     font-family: 'Audiowide', cursive;
@@ -31,13 +32,6 @@ h6 {
     font-family: 'Ubuntu', sans-serif;
 }
 
-nav {
-    background-color: var(--navbarColor);
-}
-
-.nav-link {
-    font-family: 'Roboto Condensed', sans-serif;
-}
 
 .pageSection:not(.contact) {
     padding-top: var(--navHeight);
@@ -67,26 +61,30 @@ nav {
     color: var(--primaryColor);
 }
 
-.maghPhoto {
-    border-radius: 13%;
-    width: 300px;
-}
-
 .sectionTitle {
     padding: 12px;
     border-radius: 7px;
 }
 
+/* Navbar */
+nav {
+    background-color: var(--navbarColor);
+}
+
+.nav-link {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Landing */
+.maghPhoto {
+    border-radius: 13%;
+    width: 300px;
+}
+
+/* About */
+
 .overview p {
     font-size: 20px;
-}
-
-.skills img {
-    width: 180px;
-}
-
-.overview img {
-    max-width: 450px;
 }
 
 .downloadCV {
@@ -95,13 +93,51 @@ nav {
     background-color: var(--thirdColor) !important;
 }
 
+.overview img {
+    max-width: 450px;
+}
+
+/* Skills */
+.skills img {
+    width: 180px;
+}
+
+/* Portfolio */
+.portfolioCategory {
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    padding: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
+.portfolioCategory:hover {
+    background-color: var(--thirdColor);
+    transform: scale(1.1);
+}
+
+.portfolioCategory.active {
+    background-color: var(--thirdColor);
+}
+
 .card {
     background-color: var(--secondaryColor) !important;
     box-shadow: 3px 3px 3px 2px #696969;
     border-top: none !important;
 }
 
-.fa-brands:not(.portfolio .fa-brands) {
+.portfolio .fa-brands,
+.fa-solid:not(.contact .fa-solid, .downloadCV .fa-solid) {
+    color: var(--thirdColor);
+}
+
+.portfolio .fa-solid:hover {
+    color: #2F58CD;
+}
+
+/* Contact */
+.fa-brands {
     color: #fff;
 }
 
