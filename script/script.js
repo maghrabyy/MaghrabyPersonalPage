@@ -11,6 +11,7 @@ const allcatbtnLg = document.getElementById('all-category-lg');
 const flutterCatBtnLg = document.getElementById('flutter-category-btn-lg');
 const webAppCatBtnLg = document.getElementById('webapp-category-btn-lg');
 const webDesignCatBtnLg = document.getElementById('webdesigns-category-btn-lg');
+const militaryServiceStatus = document.getElementById('militaryS_status');
 
 const imgSrc = 'Assets/images/Projects/';
 const imgToolsSrc = 'Assets/images/skills/';
@@ -22,8 +23,8 @@ const FLUTTER_CAT = 'Flutter App';
 const WEB_APP_CAT = 'Web App';
 const WEB_DESIGN_CAT = 'Web Design';
 //Tools
-const HTML = 'HTML5';
-const CSS = 'CSS3';
+const HTML_TOOL = 'HTML5';
+const CSS_TOOL = 'CSS3';
 const JAVASCRIPT = 'JavaScript';
 const BOOTSTRAP = 'BootStrap 5';
 const FLUTTER = 'Flutter';
@@ -33,10 +34,18 @@ const REACT = 'React';
 
 let chosenCategory = ALL_CAT;
 
+if (militaryServiceStatus.textContent === 'Serving') {
+    militaryServiceStatus.classList.add('text-danger');
+}
+else {
+    militaryServiceStatus.classList.add('text-success');
+
+}
+
 const toolToImgSrc = function (tool) {
-    if (tool === HTML)
+    if (tool === HTML_TOOL)
         return imgToolsSrc + 'html.png';
-    else if (tool === CSS)
+    else if (tool === CSS_TOOL)
         return imgToolsSrc + 'css.png';
     else if (tool === BOOTSTRAP)
         return imgToolsSrc + 'bootstrap.png';
@@ -153,27 +162,27 @@ addProject(FLUTTER_CAT, `pocketMechanic.png`, 'Pocket Mechanic',
 
 addProject(WEB_APP_CAT, `maghUniverse.png`, 'Maghh Universe',
     "An object oriented web application where you can choose to be hero, villian, or civil and you can add more characters of these types. The hero's role is to protect and heal the civil from the villian's attack and to attack the villain. while the villain can choose to attack the hero or the civil."
-    , [HTML, CSS, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/maghhUniverseWeb',
+    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/maghhUniverseWeb',
     'https://maghrabyy.github.io/maghhUniverseWeb/');
 
 addProject(WEB_APP_CAT, `CharacterCreator.png`, 'Character Creator',
     "A simple web application where you can input the required data to create a character with a random avatar image. Including the search feature where you can search for any characters by inputting any information needed."
-    , [HTML, CSS, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/characterCreator',
+    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/characterCreator',
     'https://maghrabyy.github.io/characterCreator/');
 
 addProject(WEB_DESIGN_CAT, `designOne.png`, 'Web Design #1',
     "The first responsive bootstrap design with landing page."
-    , [HTML, CSS, BOOTSTRAP], 'https://github.com/maghrabyy/design-One',
+    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP], 'https://github.com/maghrabyy/design-One',
     'https://maghrabyy.github.io/design-One/');
 
 addProject(WEB_DESIGN_CAT, `designTwo.png`, 'Web Design #2',
     "The second responsive bootstrap design."
-    , [HTML, CSS, BOOTSTRAP], 'https://github.com/maghrabyy/design-Two',
+    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP], 'https://github.com/maghrabyy/design-Two',
     'https://maghrabyy.github.io/design-Two/');
 
 addProject(WEB_DESIGN_CAT, `designThree.png`, 'Web Design #3',
     "The third bootstrap design using a carousel slide show."
-    , [HTML, CSS, BOOTSTRAP], 'https://github.com/maghrabyy/design-Three',
+    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP], 'https://github.com/maghrabyy/design-Three',
     'https://maghrabyy.github.io/design-Three/');
 
 // Buttons handlers
