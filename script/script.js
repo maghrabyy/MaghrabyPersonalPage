@@ -13,15 +13,46 @@ const webAppCatBtnLg = document.getElementById('webapp-category-btn-lg');
 const webDesignCatBtnLg = document.getElementById('webdesigns-category-btn-lg');
 
 const imgSrc = 'Assets/images/Projects/';
+const imgToolsSrc = 'Assets/images/skills/';
 
+
+//Categories
 const ALL_CAT = 'All Projects';
 const FLUTTER_CAT = 'Flutter App';
 const WEB_APP_CAT = 'Web App';
 const WEB_DESIGN_CAT = 'Web Design';
+//Tools
+const HTML = 'HTML5';
+const CSS = 'CSS3';
+const JAVASCRIPT = 'JavaScript';
+const BOOTSTRAP = 'BootStrap 5';
+const FLUTTER = 'Flutter';
+const DART = 'Dart';
+const FIREBASE = 'Firebase';
+const REACT = 'React';
 
 let chosenCategory = ALL_CAT;
 
-const createCardUI = function (projctImgName, projectTitle, projectDescription, githubURL, projectURL) {
+const toolToImgSrc = function (tool) {
+    if (tool === HTML)
+        return imgToolsSrc + 'html.png';
+    else if (tool === CSS)
+        return imgToolsSrc + 'css.png';
+    else if (tool === BOOTSTRAP)
+        return imgToolsSrc + 'bootstrap.png';
+    else if (tool === JAVASCRIPT)
+        return imgToolsSrc + 'js.png';
+    else if (tool === REACT)
+        return imgToolsSrc + 'physics.png';
+    else if (tool === FLUTTER)
+        return imgToolsSrc + 'flutter.png';
+    else if (tool === DART)
+        return imgToolsSrc + 'dart.png';
+    else if (tool === FIREBASE)
+        return imgToolsSrc + 'firebase.png';
+}
+
+const createCardUI = function (projctImgName, projectTitle, projectDescription, usedTools, githubURL, projectURL) {
     // Inside of Col Element
     const colElement = document.createElement('div');
     colElement.classList.add('col-lg-4', 'col-md-6', 'mb-3');
@@ -46,6 +77,23 @@ const createCardUI = function (projctImgName, projectTitle, projectDescription, 
     descriptionElement.classList.add('text-start');
     descriptionElement.textContent = projectDescription;
     cardTextElement.appendChild(descriptionElement);
+    const usedToolsElement = document.createElement('div');
+    usedToolsElement.classList.add('usedTools');
+    const usedToolsTitleElement = document.createElement('p');
+    usedToolsTitleElement.classList.add('text-start', 'fw-bold');
+    usedToolsTitleElement.textContent = 'Tools used:';
+    usedToolsElement.appendChild(usedToolsTitleElement);
+    const usedToolsItemsElement = document.createElement('div');
+    usedToolsItemsElement.classList.add('d-flex', 'gap-2', 'justify-content-center');
+    usedToolsElement.appendChild(usedToolsItemsElement);
+    usedTools.forEach(tool => {
+        const toolImgElement = document.createElement('img');
+        toolImgElement.src = toolToImgSrc(tool);
+        toolImgElement.alt = tool;
+        toolImgElement.classList.add('img-fluid', 'toolsImg');
+        usedToolsItemsElement.appendChild(toolImgElement);
+    });
+    cardTextElement.appendChild(usedToolsElement);
     cardBodyElement.appendChild(cardTextElement);
     // inside of card footer element
     const cardFooterElement = document.createElement('div');
@@ -66,7 +114,7 @@ const createCardUI = function (projctImgName, projectTitle, projectDescription, 
     rowElement.appendChild(colElement);
 }
 
-const addProject = function (projectCategory, imgURL, projectTitle, projectDescription, githubURL, projectURL) {
+const addProject = function (projectCategory, imgURL, projectTitle, projectDescription, usedTools, githubURL, projectURL) {
     const randIdNum = Math.floor(Math.random() * 100000000);
     const projectData = {
         projectID: randIdNum,
@@ -74,11 +122,12 @@ const addProject = function (projectCategory, imgURL, projectTitle, projectDescr
         imgURL,
         projectTitle,
         projectDescription,
+        usedTools,
         githubURL,
         projectURL,
     }
     projects.push(projectData);
-    createCardUI(imgURL, projectTitle, projectDescription, githubURL, projectURL)
+    createCardUI(imgURL, projectTitle, projectDescription, usedTools, githubURL, projectURL)
 }
 
 const filterProjects = function (categoryName) {
@@ -89,10 +138,10 @@ const filterProjects = function (categoryName) {
 const renderUI = function () {
     rowElement.innerHTML = '';
     if (chosenCategory !== ALL_CAT) {
-        filterProjects(chosenCategory).forEach(project => createCardUI(project.imgURL, project.projectTitle, project.projectDescription, project.githubURL, project.projectURL));
+        filterProjects(chosenCategory).forEach(project => createCardUI(project.imgURL, project.projectTitle, project.projectDescription, project.usedTools, project.githubURL, project.projectURL));
     }
     else {
-        projects.forEach(project => createCardUI(project.imgURL, project.projectTitle, project.projectDescription, project.githubURL, project.projectURL));
+        projects.forEach(project => createCardUI(project.imgURL, project.projectTitle, project.projectDescription, project.usedTools, project.githubURL, project.projectURL));
     }
 }
 
@@ -100,31 +149,31 @@ const renderUI = function () {
 
 addProject(FLUTTER_CAT, `pocketMechanic.png`, 'Pocket Mechanic',
     "A cross-platform mobile application where the user can choose between a variety of vehicle maintenance services. such as: Requesting a mechanic to do a checkup and perform their service on spot, viewing the nearest available mechanic and book a reservation date with, or the nearest available tow-truck driver around the user's location. In addition to,a section where the user can purchase spare-parts to their vehicle."
-    , 'https://github.com/maghrabyy/PocketMechnicApp');
+    , [FLUTTER, DART, FIREBASE], 'https://github.com/maghrabyy/PocketMechnicApp');
 
 addProject(WEB_APP_CAT, `maghUniverse.png`, 'Maghh Universe',
     "An object oriented web application where you can choose to be hero, villian, or civil and you can add more characters of these types. The hero's role is to protect and heal the civil from the villian's attack and to attack the villain. while the villain can choose to attack the hero or the civil."
-    , 'https://github.com/maghrabyy/maghhUniverseWeb',
+    , [HTML, CSS, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/maghhUniverseWeb',
     'https://maghrabyy.github.io/maghhUniverseWeb/');
 
 addProject(WEB_APP_CAT, `CharacterCreator.png`, 'Character Creator',
     "A simple web application where you can input the required data to create a character with a random avatar image. Including the search feature where you can search for any characters by inputting any information needed."
-    , 'https://github.com/maghrabyy/characterCreator',
+    , [HTML, CSS, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/characterCreator',
     'https://maghrabyy.github.io/characterCreator/');
 
 addProject(WEB_DESIGN_CAT, `designOne.png`, 'Web Design #1',
-    "The first responsive bootstrap design."
-    , 'https://github.com/maghrabyy/design-One',
+    "The first responsive bootstrap design with landing page."
+    , [HTML, CSS, BOOTSTRAP], 'https://github.com/maghrabyy/design-One',
     'https://maghrabyy.github.io/design-One/');
 
 addProject(WEB_DESIGN_CAT, `designTwo.png`, 'Web Design #2',
     "The second responsive bootstrap design."
-    , 'https://github.com/maghrabyy/design-Two',
+    , [HTML, CSS, BOOTSTRAP], 'https://github.com/maghrabyy/design-Two',
     'https://maghrabyy.github.io/design-Two/');
 
 addProject(WEB_DESIGN_CAT, `designThree.png`, 'Web Design #3',
     "The third bootstrap design using a carousel slide show."
-    , 'https://github.com/maghrabyy/design-Three',
+    , [HTML, CSS, BOOTSTRAP], 'https://github.com/maghrabyy/design-Three',
     'https://maghrabyy.github.io/design-Three/');
 
 // Buttons handlers
