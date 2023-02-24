@@ -107,6 +107,11 @@ addProject(WEB_APP_CAT, `maghUniverse.png`, 'Maghh Universe',
     , 'https://github.com/maghrabyy/maghhUniverseWeb',
     'https://maghrabyy.github.io/maghhUniverseWeb/');
 
+addProject(WEB_APP_CAT, `CharacterCreator.png`, 'Character Creator',
+    "A simple web application where you can input the required data to create a character with a random avatar image. Including the search feature where you can search for any characters by inputting any information needed."
+    , 'https://github.com/maghrabyy/characterCreator',
+    'https://maghrabyy.github.io/characterCreator/');
+
 addProject(WEB_DESIGN_CAT, `designOne.png`, 'Web Design #1',
     "The first responsive bootstrap design."
     , 'https://github.com/maghrabyy/design-One',
