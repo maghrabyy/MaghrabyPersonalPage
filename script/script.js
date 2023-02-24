@@ -1,6 +1,7 @@
 const projects = [];
 
 const rowElement = document.getElementById('row-element');
+const hiddenCatBtns = document.getElementById('hidden-categories-filter');
 const filterBtn = document.getElementById('filter-btn');
 const allcatbtn = document.getElementById('all-category');
 const flutterCatBtn = document.getElementById('flutter-category-btn');
@@ -23,7 +24,7 @@ let chosenCategory = ALL_CAT;
 const createCardUI = function (projctImgName, projectTitle, projectDescription, githubURL, projectURL) {
     // Inside of Col Element
     const colElement = document.createElement('div');
-    colElement.classList.add('col-lg-4');
+    colElement.classList.add('col-lg-4', 'col-md-6', 'mb-3');
     const cardElement = document.createElement('div');
     cardElement.classList.add('card', 'h-100');
     colElement.appendChild(cardElement);
@@ -95,6 +96,8 @@ const renderUI = function () {
     }
 }
 
+//Project initilization
+
 addProject(FLUTTER_CAT, `pocketMechanic.png`, 'Pocket Mechanic',
     "A cross-platform mobile application where the user can choose between a variety of vehicle maintenance services. such as: Requesting a mechanic to do a checkup and perform their service on spot, viewing the nearest available mechanic and book a reservation date with, or the nearest available tow-truck driver around the user's location. In addition to,a section where the user can purchase spare-parts to their vehicle."
     , 'https://github.com/maghrabyy/PocketMechnicApp');
@@ -104,19 +107,28 @@ addProject(WEB_APP_CAT, `maghUniverse.png`, 'Maghh Universe',
     , 'https://github.com/maghrabyy/maghhUniverseWeb',
     'https://maghrabyy.github.io/maghhUniverseWeb/');
 
+addProject(WEB_DESIGN_CAT, `designOne.png`, 'Web Design #1',
+    "The first responsive bootstrap design."
+    , 'https://github.com/maghrabyy/design-One',
+    'https://maghrabyy.github.io/design-One/');
+
+addProject(WEB_DESIGN_CAT, `designTwo.png`, 'Web Design #2',
+    "The second responsive bootstrap design."
+    , 'https://github.com/maghrabyy/design-Two',
+    'https://maghrabyy.github.io/design-Two/');
+
 addProject(WEB_DESIGN_CAT, `designThree.png`, 'Web Design #3',
     "The third bootstrap design using a carousel slide show."
     , 'https://github.com/maghrabyy/design-Three',
     'https://maghrabyy.github.io/design-Three/');
 
-
+// Buttons handlers
 const filterBtnHandler = function () {
-    const hiddenCat = document.getElementById('hidden-categories-filter');
-    if (hiddenCat.classList.contains('d-none')) {
-        hiddenCat.classList.replace('d-none', 'd-flex');
+    if (hiddenCatBtns.classList.contains('d-none')) {
+        hiddenCatBtns.classList.replace('d-none', 'd-flex');
     }
     else {
-        hiddenCat.classList.replace('d-flex', 'd-none');
+        hiddenCatBtns.classList.replace('d-flex', 'd-none');
     }
 }
 
@@ -125,40 +137,56 @@ filterBtn.addEventListener('click', filterBtnHandler);
 
 allcatbtn.addEventListener('click', () => {
     chosenCategory = ALL_CAT;
+    document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
+    allcatbtn.classList.add('active');
     renderUI();
 })
 
 flutterCatBtn.addEventListener('click', () => {
     chosenCategory = FLUTTER_CAT;
+    document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
+    flutterCatBtn.classList.add('active');
     renderUI();
 })
 
 webAppCatBtn.addEventListener('click', () => {
     chosenCategory = WEB_APP_CAT;
+    document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
+    webAppCatBtn.classList.add('active');
     renderUI();
 })
 
 webDesignCatBtn.addEventListener('click', () => {
     chosenCategory = WEB_DESIGN_CAT;
+    document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
+    webDesignCatBtn.classList.add('active');
     renderUI();
 })
 
 allcatbtnLg.addEventListener('click', () => {
     chosenCategory = ALL_CAT;
+    document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
+    allcatbtnLg.classList.add('active');
     renderUI();
 })
 
 flutterCatBtnLg.addEventListener('click', () => {
     chosenCategory = FLUTTER_CAT;
+    document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
+    flutterCatBtnLg.classList.add('active');
     renderUI();
 })
 
 webAppCatBtnLg.addEventListener('click', () => {
     chosenCategory = WEB_APP_CAT;
+    document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
+    webAppCatBtnLg.classList.add('active');
     renderUI();
 })
 
 webDesignCatBtnLg.addEventListener('click', () => {
     chosenCategory = WEB_DESIGN_CAT;
+    document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
+    webDesignCatBtnLg.classList.add('active');
     renderUI();
 })
