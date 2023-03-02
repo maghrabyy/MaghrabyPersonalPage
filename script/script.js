@@ -1,5 +1,7 @@
+//Projects Array
 const projects = [];
 
+//dom Elements
 const rowElement = document.getElementById('row-element');
 const hiddenCatBtns = document.getElementById('hidden-categories-filter');
 const filterBtn = document.getElementById('filter-btn');
@@ -13,26 +15,31 @@ const webAppCatBtnLg = document.getElementById('webapp-category-btn-lg');
 const webDesignCatBtnLg = document.getElementById('webdesigns-category-btn-lg');
 const militaryServiceStatus = document.getElementById('militaryS_status');
 
-const imgSrc = 'Assets/images/Projects/';
+//Image sources
+const imgProjectsSrc = 'Assets/images/Projects/';
 const imgToolsSrc = 'Assets/images/skills/';
 
 
 //Categories
-const ALL_CAT = 'All Projects';
-const FLUTTER_CAT = 'Flutter App';
-const WEB_APP_CAT = 'Web App';
-const WEB_DESIGN_CAT = 'Web Design';
+const portfolioCategories = {
+    all: 'All Projects',
+    flutter: 'Flutter App',
+    webApp: 'Web App',
+    webDesign: 'Web Design'
+}
 //Tools
-const HTML_TOOL = 'HTML5';
-const CSS_TOOL = 'CSS3';
-const JAVASCRIPT = 'JavaScript';
-const BOOTSTRAP = 'BootStrap 5';
-const FLUTTER = 'Flutter';
-const DART = 'Dart';
-const FIREBASE = 'Firebase';
-const REACT = 'React';
+const toolsUsed = {
+    html: 'HTML5',
+    css: 'CSS3',
+    js: 'JavaScript',
+    bootstrap: 'BootStrap 5',
+    flutter: 'Flutter',
+    dart: 'Dart',
+    firebase: 'Firebase',
+    react: 'React'
+}
 
-let chosenCategory = ALL_CAT;
+let chosenCategory = portfolioCategories.all;
 
 if (militaryServiceStatus.textContent === 'Serving') {
     militaryServiceStatus.classList.add('text-danger');
@@ -43,21 +50,21 @@ else {
 }
 
 const toolToImgSrc = function (tool) {
-    if (tool === HTML_TOOL)
+    if (tool === toolsUsed.html)
         return imgToolsSrc + 'html.png';
-    else if (tool === CSS_TOOL)
+    else if (tool === toolsUsed.css)
         return imgToolsSrc + 'css.png';
-    else if (tool === BOOTSTRAP)
+    else if (tool === toolsUsed.bootstrap)
         return imgToolsSrc + 'bootstrap.png';
-    else if (tool === JAVASCRIPT)
+    else if (tool === toolsUsed.js)
         return imgToolsSrc + 'js.png';
-    else if (tool === REACT)
+    else if (tool === toolsUsed.react)
         return imgToolsSrc + 'physics.png';
-    else if (tool === FLUTTER)
+    else if (tool === toolsUsed.flutter)
         return imgToolsSrc + 'flutter.png';
-    else if (tool === DART)
+    else if (tool === toolsUsed.dart)
         return imgToolsSrc + 'dart.png';
-    else if (tool === FIREBASE)
+    else if (tool === toolsUsed.firebase)
         return imgToolsSrc + 'firebase.png';
 }
 
@@ -70,7 +77,7 @@ const createCardUI = function (projctImgName, projectTitle, projectDescription, 
     colElement.appendChild(cardElement);
     // Inside of card Element
     const imgElement = document.createElement('img');
-    imgElement.src = `${imgSrc}${projctImgName}`;
+    imgElement.src = `${imgProjectsSrc}${projctImgName}`;
     imgElement.alt = projectTitle;
     imgElement.classList.add('card-img-top', 'img-fluid');
     const cardHeaderElement = document.createElement('div');
@@ -136,7 +143,6 @@ const addProject = function (projectCategory, imgURL, projectTitle, projectDescr
         projectURL,
     }
     projects.push(projectData);
-    createCardUI(imgURL, projectTitle, projectDescription, usedTools, githubURL, projectURL)
 }
 
 const filterProjects = function (categoryName) {
@@ -146,7 +152,7 @@ const filterProjects = function (categoryName) {
 
 const renderUI = function () {
     rowElement.innerHTML = '';
-    if (chosenCategory !== ALL_CAT) {
+    if (chosenCategory !== portfolioCategories.all) {
         filterProjects(chosenCategory).forEach(project => createCardUI(project.imgURL, project.projectTitle, project.projectDescription, project.usedTools, project.githubURL, project.projectURL));
     }
     else {
@@ -156,34 +162,36 @@ const renderUI = function () {
 
 //Project initilization
 
-addProject(FLUTTER_CAT, `pocketMechanic.png`, 'Pocket Mechanic',
+addProject(portfolioCategories.flutter, `pocketMechanic.png`, 'Pocket Mechanic',
     "A cross-platform mobile application where the user can choose between a variety of vehicle maintenance services. such as: Requesting a mechanic to do a checkup and perform their service on spot, viewing the nearest available mechanic and book a reservation date with, or the nearest available tow-truck driver around the user's location. In addition to,a section where the user can purchase spare-parts to their vehicle."
-    , [FLUTTER, DART, FIREBASE], 'https://github.com/maghrabyy/PocketMechnicApp');
+    , [toolsUsed.flutter, toolsUsed.dart, toolsUsed.firebase], 'https://github.com/maghrabyy/PocketMechnicApp');
 
-addProject(WEB_APP_CAT, `maghUniverse.png`, 'Maghh Universe',
+addProject(portfolioCategories.webApp, `maghUniverse.png`, 'Maghh Universe',
     "An object oriented web application where you can choose to be hero, villian, or civil and you can add more characters of these types. The hero's role is to protect and heal the civil from the villian's attack and to attack the villain. while the villain can choose to attack the hero or the civil."
-    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/maghhUniverseWeb',
+    , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap, toolsUsed.js], 'https://github.com/maghrabyy/maghhUniverseWeb',
     'https://maghrabyy.github.io/maghhUniverseWeb/');
 
-addProject(WEB_APP_CAT, `CharacterCreator.png`, 'Character Creator',
+addProject(portfolioCategories.webApp, `CharacterCreator.png`, 'Character Creator',
     "A simple web application where you can input the required data to create a character with a random avatar image. Including the search feature where you can search for any characters by inputting any information needed."
-    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP, JAVASCRIPT], 'https://github.com/maghrabyy/characterCreator',
+    , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap, toolsUsed.js], 'https://github.com/maghrabyy/characterCreator',
     'https://maghrabyy.github.io/characterCreator/');
 
-addProject(WEB_DESIGN_CAT, `designOne.png`, 'Web Design #1',
+addProject(portfolioCategories.webDesign, `designOne.png`, 'Web Design #1',
     "The first responsive bootstrap design with landing page."
-    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP], 'https://github.com/maghrabyy/design-One',
+    , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap], 'https://github.com/maghrabyy/design-One',
     'https://maghrabyy.github.io/design-One/');
 
-addProject(WEB_DESIGN_CAT, `designTwo.png`, 'Web Design #2',
+addProject(portfolioCategories.webDesign, `designTwo.png`, 'Web Design #2',
     "The second responsive bootstrap design."
-    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP], 'https://github.com/maghrabyy/design-Two',
+    , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap], 'https://github.com/maghrabyy/design-Two',
     'https://maghrabyy.github.io/design-Two/');
 
-addProject(WEB_DESIGN_CAT, `designThree.png`, 'Web Design #3',
+addProject(portfolioCategories.webDesign, `designThree.png`, 'Web Design #3',
     "The third bootstrap design using a carousel slide show."
-    , [HTML_TOOL, CSS_TOOL, BOOTSTRAP], 'https://github.com/maghrabyy/design-Three',
+    , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap], 'https://github.com/maghrabyy/design-Three',
     'https://maghrabyy.github.io/design-Three/');
+
+renderUI();
 
 // Buttons handlers
 const filterBtnHandler = function () {
@@ -199,56 +207,56 @@ filterBtn.addEventListener('click', filterBtnHandler);
 
 
 allcatbtn.addEventListener('click', () => {
-    chosenCategory = ALL_CAT;
+    chosenCategory = portfolioCategories.all;
     document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
     allcatbtn.classList.add('active');
     renderUI();
 })
 
 flutterCatBtn.addEventListener('click', () => {
-    chosenCategory = FLUTTER_CAT;
+    chosenCategory = portfolioCategories.flutter;
     document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
     flutterCatBtn.classList.add('active');
     renderUI();
 })
 
 webAppCatBtn.addEventListener('click', () => {
-    chosenCategory = WEB_APP_CAT;
+    chosenCategory = portfolioCategories.webApp;
     document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
     webAppCatBtn.classList.add('active');
     renderUI();
 })
 
 webDesignCatBtn.addEventListener('click', () => {
-    chosenCategory = WEB_DESIGN_CAT;
+    chosenCategory = portfolioCategories.webDesign;
     document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
     webDesignCatBtn.classList.add('active');
     renderUI();
 })
 
 allcatbtnLg.addEventListener('click', () => {
-    chosenCategory = ALL_CAT;
+    chosenCategory = portfolioCategories.all;
     document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
     allcatbtnLg.classList.add('active');
     renderUI();
 })
 
 flutterCatBtnLg.addEventListener('click', () => {
-    chosenCategory = FLUTTER_CAT;
+    chosenCategory = portfolioCategories.flutter;
     document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
     flutterCatBtnLg.classList.add('active');
     renderUI();
 })
 
 webAppCatBtnLg.addEventListener('click', () => {
-    chosenCategory = WEB_APP_CAT;
+    chosenCategory = portfolioCategories.webApp;
     document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
     webAppCatBtnLg.classList.add('active');
     renderUI();
 })
 
 webDesignCatBtnLg.addEventListener('click', () => {
-    chosenCategory = WEB_DESIGN_CAT;
+    chosenCategory = portfolioCategories.webDesign;
     document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
     webDesignCatBtnLg.classList.add('active');
     renderUI();
