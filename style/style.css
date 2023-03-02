@@ -165,3 +165,25 @@ nav {
 .linkedin:hover {
     color: #00a0dc;
 }
+
+/* Custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--secondaryColor);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--primaryColor);
+    border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--thirdColor);
+}
