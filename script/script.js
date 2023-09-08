@@ -199,7 +199,7 @@ addProject(portfolioCategories.webDesign, `designThree.png`, 'Web Design #3',
 
 addProject(portfolioCategories.reactApp, `stickyNoteReactApp.png`, 'Sticky Note',
     "Simple Sticky note React app styled using TailwindCSS."
-    , [toolsUsed.html, toolsUsed.css, toolsUsed.tailwindCSS,toolsUsed.react], 'https://github.com/maghrabyy/sticky-notes',
+    , [toolsUsed.react,toolsUsed.tailwindCSS], 'https://github.com/maghrabyy/sticky-notes',
     'https://maghrabyy.github.io/sticky-notes/');
 
 renderUI();
