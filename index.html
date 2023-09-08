@@ -202,13 +202,13 @@
                         <div class="customButton mb-3" id="filter-btn">Filter 
                             <i class="fa-solid fa-filter"></i>
                         </div>
-                        <ul class="hiddenCategories list-unstyled d-none flex-column flex-wrap ps-5 gap-2" id="hidden-categories-filter">
-                            <li class="portfolioCategory customButton active" id="all-category">All</li>
-                            <li class="portfolioCategory customButton" id="flutter-category-btn">Flutter Apps</li>
-                            <li class="portfolioCategory customButton" id="webapp-category-btn">Web Apps</li>
-                            <li class="portfolioCategory customButton" id="reactapp-category-btn">React Apps</li>
-                            <li class="portfolioCategory customButton" id="webdesigns-category-btn">Web Designs</li>
-                        </ul>
+                        <div class="hiddenCategories d-none flex-wrap ps-5 mb-5 gap-2" id="hidden-categories-filter">
+                            <div class="portfolioCategory customButton active" id="all-category">All</div>
+                            <div class="portfolioCategory customButton" id="flutter-category-btn">Flutter Apps</div>
+                            <div class="portfolioCategory customButton" id="webapp-category-btn">Web Apps</div>
+                            <div class="portfolioCategory customButton" id="reactapp-category-btn">React App</div>
+                            <div class="portfolioCategory customButton mb-5" id="webdesigns-category-btn">Web Designs</div>
+                        </div>
                     </div>
                     <ul class="shownCategories list-unstyled d-none d-lg-flex justify-content-center gap-3 text-center">
                         <li class="portfolioCategory customButton active" id="all-category-lg">All</li>
@@ -218,6 +218,7 @@
                         <li class="portfolioCategory customButton" id="webdesigns-category-btn-lg">Web Designs</li>
                     </ul>
                 </div>
+                <div class="pt-4"></div>
                 <div class="row text-center" id="row-element">
                 </div>
             </div>
