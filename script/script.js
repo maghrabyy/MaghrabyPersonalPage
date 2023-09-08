@@ -9,10 +9,12 @@ const allcatbtn = document.getElementById('all-category');
 const flutterCatBtn = document.getElementById('flutter-category-btn');
 const webAppCatBtn = document.getElementById('webapp-category-btn');
 const webDesignCatBtn = document.getElementById('webdesigns-category-btn');
+const reactAppCatBtn = document.getElementById('reactapp-category-btn');
 const allcatbtnLg = document.getElementById('all-category-lg');
 const flutterCatBtnLg = document.getElementById('flutter-category-btn-lg');
 const webAppCatBtnLg = document.getElementById('webapp-category-btn-lg');
 const webDesignCatBtnLg = document.getElementById('webdesigns-category-btn-lg');
+const reactAppCatBtnLg = document.getElementById('reactapp-category-btn-lg');
 const militaryServiceStatus = document.getElementById('militaryS_status');
 
 //Image sources
@@ -25,6 +27,7 @@ const portfolioCategories = {
     all: 'All Projects',
     flutter: 'Flutter App',
     webApp: 'Web App',
+    reactApp:'React App',
     webDesign: 'Web Design'
 }
 //Tools
@@ -33,6 +36,7 @@ const toolsUsed = {
     css: 'CSS3',
     js: 'JavaScript',
     bootstrap: 'BootStrap 5',
+    tailwindCSS:'TailwindCSS',
     flutter: 'Flutter',
     dart: 'Dart',
     firebase: 'Firebase',
@@ -66,6 +70,8 @@ const toolToImgSrc = function (tool) {
         return imgToolsSrc + 'dart.png';
     else if (tool === toolsUsed.firebase)
         return imgToolsSrc + 'firebase.png';
+    else if (tool === toolsUsed.tailwindCSS)
+        return imgToolsSrc + 'tailwindcss.svg';
 }
 
 const createCardUI = function (projctImgName, projectTitle, projectDescription, usedTools, githubURL, projectURL) {
@@ -191,6 +197,11 @@ addProject(portfolioCategories.webDesign, `designThree.png`, 'Web Design #3',
     , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap], 'https://github.com/maghrabyy/design-Three',
     'https://maghrabyy.github.io/design-Three/');
 
+addProject(portfolioCategories.reactApp, `stickyNoteReactApp.png`, 'Sticky Note',
+    "Simple Sticky note React app styled using TailwindCSS."
+    , [toolsUsed.html, toolsUsed.css, toolsUsed.tailwindCSS,toolsUsed.react], 'https://github.com/maghrabyy/sticky-notes',
+    'https://maghrabyy.github.io/sticky-notes/');
+
 renderUI();
 
 // Buttons handlers
@@ -227,6 +238,13 @@ webAppCatBtn.addEventListener('click', () => {
     renderUI();
 })
 
+reactAppCatBtn.addEventListener('click', () => {
+    chosenCategory = portfolioCategories.reactApp;
+    document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
+    reactAppCatBtn.classList.add('active');
+    renderUI();
+})
+
 webDesignCatBtn.addEventListener('click', () => {
     chosenCategory = portfolioCategories.webDesign;
     document.querySelectorAll('.hiddenCategories li').forEach(node => node.classList.remove('active'));
@@ -252,6 +270,13 @@ webAppCatBtnLg.addEventListener('click', () => {
     chosenCategory = portfolioCategories.webApp;
     document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
     webAppCatBtnLg.classList.add('active');
+    renderUI();
+})
+
+reactAppCatBtnLg.addEventListener('click', () => {
+    chosenCategory = portfolioCategories.reactApp;
+    document.querySelectorAll('.shownCategories li').forEach(node => node.classList.remove('active'));
+    reactAppCatBtnLg.classList.add('active');
     renderUI();
 })
 
