@@ -40,7 +40,8 @@ const toolsUsed = {
     flutter: 'Flutter',
     dart: 'Dart',
     firebase: 'Firebase',
-    react: 'React'
+    react: 'React',
+    ts:'TypeScript'
 }
 
 let chosenCategory = portfolioCategories.all;
@@ -62,6 +63,8 @@ const toolToImgSrc = function (tool) {
         return imgToolsSrc + 'bootstrap.png';
     else if (tool === toolsUsed.js)
         return imgToolsSrc + 'js.png';
+    else if (tool === toolsUsed.ts)
+        return imgToolsSrc + 'typescript.png';
     else if (tool === toolsUsed.react)
         return imgToolsSrc + 'physics.png';
     else if (tool === toolsUsed.flutter)
@@ -201,6 +204,16 @@ addProject(portfolioCategories.reactApp, `stickyNoteReactApp.png`, 'Sticky Note'
     "Simple Sticky note React app styled using TailwindCSS."
     , [toolsUsed.react,toolsUsed.tailwindCSS], 'https://github.com/maghrabyy/sticky-notes',
     'https://maghrabyy.github.io/sticky-notes/');
+
+addProject(portfolioCategories.reactApp, `ecommerceDashboard.png`, 'ECommerce Dashboard',
+    "an ecommerce business management system dashboard that has various functionalities including: Inventory management system, Order management system, and Accounting system."
+    , [toolsUsed.react,toolsUsed.tailwindCSS], 'https://github.com/maghrabyy/eCommerce-Platform',
+    'https://ecommerce-platform-alpha.vercel.app/');
+
+addProject(portfolioCategories.reactApp, `pixelArcade.png`, 'Pixel Arcade',
+    "Classic games arcade games ReactJs based web application."
+    , [toolsUsed.react,toolsUsed.ts,toolsUsed.tailwindCSS], 'https://github.com/maghrabyy/pixel-arcade',
+    'https://pixel-arcade-zeta.vercel.app/');
 
 renderUI();
 
