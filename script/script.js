@@ -77,7 +77,7 @@ const toolToImgSrc = function (tool) {
     else if (tool === toolsUsed.firebase)
         return imgToolsSrc + 'firebase.png';
     else if (tool === toolsUsed.tailwindCSS)
-        return imgToolsSrc + 'tailwindcss.png';
+        return imgToolsSrc + 'tailwindcss.svg';
 }
 
 const createCardUI = function (projctImgName, projectTitle, projectDescription, usedTools, githubURL, projectURL) {
