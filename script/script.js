@@ -222,7 +222,8 @@ addProject(portfolioCategories.reactApp, `pixelArcade.png`, 'Pixel Arcade',
     "Classic games arcade games ReactJs based web application."
     , [toolsUsed.react,toolsUsed.ts,toolsUsed.tailwindCSS], 'https://github.com/maghrabyy/pixel-arcade',
     'https://pixel-arcade-zeta.vercel.app/');
-
+addProject(portfolioCategories.reactApp,'adopt-me.png','Adopt Me','Pet adopting application - ReactJS project powered by Redux toolkit state management & RTK Query',[toolsUsed.react, toolsUsed.redux,toolsUsed.tailwindCSS],'https://github.com/maghrabyy/adopt-me','https://adoptme-rouge.vercel.app/')
+addProject(portfolioCategories.vanillaJs,'maghcloud-player.png','MaghCloud','A visually appealing responsive music player',[toolsUsed.html, toolsUsed.css, toolsUsed.js],'https://github.com/maghrabyy/maghh-player','http://maghcloud.netlify.app/')
 renderUI();
 
 // Buttons handlers
