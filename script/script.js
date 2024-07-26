@@ -175,7 +175,7 @@ const renderUI = function () {
 //Project initilization
 
 addProject(portfolioCategories.flutter, `pocketMechanic.png`, 'Pocket Mechanic',
-    "A cross-platform mobile application where the user can choose between a variety of vehicle maintenance services. such as: Requesting a mechanic to do a checkup and perform their service on spot, viewing the nearest available mechanic and book a reservation date with, or the nearest available tow-truck driver around the user's location. In addition to,a section where the user can purchase spare-parts to their vehicle."
+    "A cross-platform mobile application where the user can choose between a variety of vehicle maintenance services."
     , [toolsUsed.flutter, toolsUsed.dart, toolsUsed.firebase], 'https://github.com/maghrabyy/PocketMechnicApp');
 
 addProject(portfolioCategories.vanillaJs, `maghUniverse.png`, 'Maghh Universe',
