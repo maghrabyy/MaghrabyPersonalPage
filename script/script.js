@@ -42,7 +42,11 @@ const toolsUsed = {
     firebase: 'Firebase',
     react: 'React',
     redux: 'Redux',
-    ts:'TypeScript'
+    ts:'TypeScript',
+    nextJS:'NextJS',
+    nodeJS:"NodeJS",
+    mui:'MaterialUI',
+    sass:'SASS'
 }
 
 let chosenCategory = portfolioCategories.all;
@@ -78,6 +82,14 @@ const toolToImgSrc = function (tool) {
         return imgToolsSrc + 'firebase.png';
     else if (tool === toolsUsed.tailwindCSS)
         return imgToolsSrc + 'tailwindcss.svg';
+    else if (tool === toolsUsed.nextJS)
+        return imgToolsSrc + 'nextjs.png'
+    else if (tool === toolsUsed.nodeJS)
+        return imgToolsSrc + 'nodejs.png'
+    else if (tool === toolsUsed.mui)
+        return imgToolsSrc + 'mui.png'
+    else if (tool === toolsUsed.sass)
+        return imgToolsSrc + 'sass.png'
 }
 
 const createCardUI = function (projctImgName, projectTitle, projectDescription, usedTools, githubURL, projectURL) {
@@ -178,16 +190,6 @@ addProject(portfolioCategories.flutter, `pocketMechanic.png`, 'Pocket Mechanic',
     "A cross-platform mobile application where the user can choose between a variety of vehicle maintenance services."
     , [toolsUsed.flutter, toolsUsed.dart, toolsUsed.firebase], 'https://github.com/maghrabyy/PocketMechnicApp');
 
-addProject(portfolioCategories.vanillaJs, `maghUniverse.png`, 'Maghh Universe',
-    "An object oriented web application where you can choose to be hero, villian, or civil and you can add more characters of these types. The hero's role is to protect and heal the civil from the villian's attack and to attack the villain. while the villain can choose to attack the hero or the civil."
-    , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap, toolsUsed.js], 'https://github.com/maghrabyy/maghhUniverseWeb',
-    'https://maghrabyy.github.io/maghhUniverseWeb/');
-
-addProject(portfolioCategories.vanillaJs, `CharacterCreator.png`, 'Character Creator',
-    "A simple web application where you can input the required data to create a character with a random avatar image. Including the search feature where you can search for any characters by inputting any information needed."
-    , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap, toolsUsed.js], 'https://github.com/maghrabyy/characterCreator',
-    'https://maghrabyy.github.io/characterCreator/');
-
 addProject(portfolioCategories.vanillaJs, `basicEcommerce.png`, 'Basic Ecommerce',
     "A basic ecommerce website developed using Vanilla JS and bootstrap with a shopping cart and categorized products ecommerce features."
     , [toolsUsed.html, toolsUsed.css, toolsUsed.bootstrap, toolsUsed.js], 'https://github.com/maghrabyy/Basic_Ecommerce',
@@ -224,6 +226,9 @@ addProject(portfolioCategories.reactApp, `pixelArcade.png`, 'Pixel Arcade',
     'https://pixel-arcade-zeta.vercel.app/');
 addProject(portfolioCategories.reactApp,'adopt-me.png','Adopt Me','Pet adopting application - ReactJS project powered by Redux toolkit state management & RTK Query',[toolsUsed.react, toolsUsed.redux,toolsUsed.tailwindCSS],'https://github.com/maghrabyy/adopt-me','https://adoptme-rouge.vercel.app/')
 addProject(portfolioCategories.vanillaJs,'maghcloud-player.png','MaghCloud','A visually appealing responsive music player',[toolsUsed.html, toolsUsed.css, toolsUsed.js],'https://github.com/maghrabyy/maghh-player','http://maghcloud.netlify.app/')
+addProject(portfolioCategories.reactApp,"magh-store-home-page-header.png","Magh Store - Musical Instrument Store", 'A fully functional musical instrument online store, with an appealing responsive user friendly interface.',[toolsUsed.react,toolsUsed.ts,toolsUsed.redux,toolsUsed.tailwindCSS],'https://github.com/maghrabyy/reactjs-ecommerce','https://maghh-store-kohl.vercel.app/')
+addProject(portfolioCategories.webDesign,"mui-design-header.png","MUI Design","A commercial website for a corporate with MUI based design.",[toolsUsed.react,toolsUsed.tailwindCSS, toolsUsed.mui],"https://github.com/maghrabyy/mui-based-design",'https://maghtech-mui.vercel.app/')
+
 renderUI();
 
 // Buttons handlers
